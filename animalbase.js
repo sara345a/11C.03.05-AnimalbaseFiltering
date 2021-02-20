@@ -27,7 +27,6 @@ function start() {
     });
 }
 
-
 function loadJSON() {
     console.log("loadJSON");
     fetch("animals.json").then((response) => response.json()).then((jsonData) => {
@@ -39,16 +38,12 @@ function loadJSON() {
     
   }
 
-
-
   function prepareObjects(jsonData) {
     console.log("prepareObjects");
     allAnimals = jsonData.map(prepareObject);
 
     displayList(allAnimals);
 }
-
-
 
 function prepareObject(jsonObject) {
     console.log("prepareObject");
@@ -64,7 +59,6 @@ function prepareObject(jsonObject) {
     return animal;
 }
 
-
 function displayList(animals) {
     console.log("displayList");
 
@@ -74,7 +68,6 @@ function displayList(animals) {
     // build a new list
     animals.forEach(displayAnimal);
 }
-
 function displayAnimal(animal) {
     console.log("displayAnimal");
 
@@ -92,7 +85,6 @@ function displayAnimal(animal) {
     document.querySelector("#list tbody").appendChild(clone);
 }
 
-
 function clickFilterButton(event) {
     filter = event.target.dataset.filter;
     console.log(filter);
@@ -101,7 +93,6 @@ function clickFilterButton(event) {
     console.log(filteredAnimals);
     displayList(filteredAnimals);
 }
-
 
 function filterAnimals() {
     console.log("filterAnimals");
